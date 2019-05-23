@@ -1,9 +1,13 @@
 -include env_make
 
-PHP_VER ?= 7.3.8
+
+PHP_DEV=1
+
+PHP_VER ?= 7.2.16
+
 PHP_VER_MINOR ?= $(shell echo "${PHP_VER}" | grep -oE '^[0-9]+\.[0-9]+')
 
-REPO = wodby/php
+REPO = nomead/php
 NAME = php-$(PHP_VER_MINOR)
 FROM_TAG = $(PHP_VER)
 
@@ -13,29 +17,29 @@ WODBY_GROUP_ID ?= 1000
 PECL_HTTP_PROXY ?= ""
 
 ifeq ($(TAG),)
-    ifneq ($(PHP_DEBUG),)
-        TAG ?= $(PHP_VER_MINOR)-debug
-    else ifneq ($(PHP_DEV),)
-    	TAG ?= $(PHP_VER_MINOR)-dev
-    else
-        TAG ?= $(PHP_VER_MINOR)
-    endif
+		ifneq ($(PHP_DEBUG),)
+				TAG ?= $(PHP_VER_MINOR)-debug
+		else ifneq ($(PHP_DEV),)
+			TAG ?= $(PHP_VER_MINOR)-dev
+		else
+				TAG ?= $(PHP_VER_MINOR)
+		endif
 endif
 
 ifneq ($(PHP_DEV),)
-    NAME := $(NAME)-dev
+		NAME := $(NAME)-dev
 endif
 
 ifneq ($(PHP_DEBUG),)
-    NAME := $(NAME)-debug
-    FROM_TAG := $(FROM_TAG)-debug
-    PHP_DEV := 1
+		NAME := $(NAME)-debug
+		FROM_TAG := $(FROM_TAG)-debug
+		PHP_DEV := 1
 endif
 
 ifneq ($(STABILITY_TAG),)
-    ifneq ($(TAG),latest)
-        override TAG := $(TAG)-$(STABILITY_TAG)
-    endif
+		ifneq ($(TAG),latest)
+				override TAG := $(TAG)-$(STABILITY_TAG)
+		endif
 endif
 
 .PHONY: build test push shell run start stop logs clean release

@@ -205,7 +205,6 @@ RUN set -xe; \
         igbinary \
         imagick \
         grpc \
-        memcached \
         mongodb \
         oauth \
         redis \
@@ -225,6 +224,14 @@ RUN set -xe; \
     wget -qO- "${blackfire_url}" | tar xz --no-same-owner -C /tmp/blackfire; \
     mv /tmp/blackfire/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so; \
     \
+    # aws-elasticache-cluster-client-memcached-for-php
+    mkdir -p /tmp/cluster; \
+    version=$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;"); \
+    cluster_url="https://elasticache-downloads.s3.amazonaws.com/ClusterClient/PHP-${version}/latest-64bit"; \
+    wget -qO- "${cluster_url}" | tar xz --no-same-owner -C /tmp/cluster; \
+    mv /tmp/cluster/amazon-elasticache-cluster-client.so $(php -r "echo ini_get('extension_dir');")/; \
+
+        docker-php-ext-enable amazon-elasticache-cluster-client; \
     # Uploadprogress.
     mkdir -p /usr/src/php/ext/uploadprogress; \
     up_url="https://github.com/wodby/pecl-php-uploadprogress/archive/latest.tar.gz"; \

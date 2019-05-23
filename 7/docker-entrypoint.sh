@@ -71,7 +71,7 @@ process_templates() {
         _gotpl "docker-php-ext-blackfire.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php-ext-blackfire.ini"
         _gotpl "docker-php-ext-newrelic.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php-ext-newrelic.ini"
     fi
-
+    _gotpl "docker-php-ext-amazon-elasticache-cluster-client.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php-ext-amazon-elasticache-cluster-client.ini"
     _gotpl "docker-php-${php_ver_minor}.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php.ini"
     _gotpl "docker-php-ext-apcu.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php-ext-apcu.ini"
     _gotpl "docker-php-ext-igbinary.ini.tmpl" "${PHP_INI_DIR}/conf.d/docker-php-ext-igbinary.ini"
