@@ -187,6 +187,7 @@ RUN set -xe; \
         grpc-1.20.0 \
         igbinary-3.0.1 \
         imagick-3.4.4 \
+        jsmin-3.0.0 \
         memcached-3.1.3 \
         mongodb-1.5.5 \
         oauth-2.0.3 \
@@ -205,6 +206,7 @@ RUN set -xe; \
         igbinary \
         imagick \
         grpc \
+        jsmin \
         mongodb \
         oauth \
         redis \
