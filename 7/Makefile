@@ -8,7 +8,7 @@ PHP_DEV=1
 
 PHP_VER_MINOR ?= $(shell echo "${PHP_VER}" | grep -oE '^[0-9]+\.[0-9]+')
 
-REPO = nomead/php
+REPO = 407445147104.dkr.ecr.us-west-2.amazonaws.com/communications-base-php
 NAME = php-$(PHP_VER_MINOR)
 FROM_TAG = $(PHP_VER)
 
