@@ -112,13 +112,6 @@ RUN set -xe; \
     apk add -U --no-cache -t .wodby-php-edge-run-deps -X http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
         gnu-libiconv=1.15-r2; \
     \
-    # Install redis-cli.
-    apk add --update --no-cache redis; \
-    mv /usr/bin/redis-cli /tmp/; \
-    apk del --purge redis; \
-    deluser redis; \
-    mv /tmp/redis-cli /usr/bin; \
-    \
     docker-php-source extract; \
     \
     docker-php-ext-install \
@@ -192,7 +185,6 @@ RUN set -xe; \
         mongodb-1.5.5 \
         oauth-2.0.3 \
         rdkafka-3.1.2 \
-        redis-4.3.0 \
         uuid-1.0.4 \
         xdebug-2.7.2 \
         yaml-2.0.4; \
@@ -209,7 +201,6 @@ RUN set -xe; \
         jsmin \
         mongodb \
         oauth \
-        redis \
         rdkafka \
         uuid \
         xdebug \
