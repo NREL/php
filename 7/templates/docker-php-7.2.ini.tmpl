@@ -6,7 +6,7 @@
 display_errors = {{ getenv "PHP_DISPLAY_ERRORS" "Off" }}
 display_startup_errors = {{ getenv "PHP_DISPLAY_STARTUP_ERRORS" "Off" }}
 expose_php = {{ getenv "PHP_EXPOSE" "Off" }}
-max_execution_time = {{ getenv "PHP_MAX_EXECUTION_TIME" "120" }}
+max_execution_time = {{ getenv "PHP_MAX_EXECUTION_TIME" "900" }}
 max_input_time = {{ getenv "PHP_MAX_INPUT_TIME" "60" }}
 max_input_vars = {{ getenv "PHP_MAX_INPUT_VARS" "2000" }}
 post_max_size = {{ getenv "PHP_POST_MAX_SIZE" "32M" }}
@@ -46,7 +46,7 @@ mysqli.cache_size = {{ getenv "PHP_MYSQLI_CACHE_SIZE" "2000" }}
 
 [Session]
 session.save_handler = {{ getenv "PHP_SESSION_SAVE_HANDLER" "files" }}
-session.save_path = "{{ getenv "PHP_SESSION_SAVE_PATH" "/mnt/files/sessions" }}"
+session.save_path = "{{ getenv "PHP_SESSION_SAVE_PATH" "/var/www/common/sessions" }}"
 session.use_strict_mode = {{ getenv "PHP_SESSION_USE_STRICT_MODE" "0" }}
 session.use_cookies = {{ getenv "PHP_SESSION_USE_COOKIES" "1" }}
 session.cookie_secure = {{ getenv "PHP_SESSION_COOKIE_SECURE" "0" }}

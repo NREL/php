@@ -16,7 +16,7 @@ ENV PHP_DEV="${PHP_DEV}" \
 
 ENV APP_ROOT="/var/www/html" \
     CONF_DIR="/var/www/conf" \
-    FILES_DIR="/mnt/files"
+    FILES_DIR="/var/www/common/files"
 
 ENV PATH="${PATH}:/home/wodby/.composer/vendor/bin:${APP_ROOT}/vendor/bin:${APP_ROOT}/bin" \
     SSHD_HOST_KEYS_DIR="/etc/ssh" \
@@ -187,7 +187,7 @@ RUN set -xe; \
         grpc-1.20.0 \
         igbinary-3.0.1 \
         imagick-3.4.4 \
-        # jsmin-3.0.0 \
+        jsmin-3.0.0 \
         memcached-3.1.3 \
         mongodb-1.5.5 \
         oauth-2.0.3 \
@@ -206,7 +206,7 @@ RUN set -xe; \
         igbinary \
         imagick \
         grpc \
-        # jsmin \
+        jsmin \
         mongodb \
         oauth \
         redis \
