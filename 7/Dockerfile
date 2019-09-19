@@ -12,7 +12,9 @@ ARG WODBY_GROUP_ID=1000
 
 ENV PHP_DEV="${PHP_DEV}" \
     PHP_DEBUG="${PHP_DEBUG}" \
-    LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
+    LD_PRELOAD="/usr/lib/preloadable_libiconv.so php" \
+    PHP_FPM_USER="www-data" \
+    PHP_FPM_GROUP="www-data"
 
 ENV APP_ROOT="/var/www/html" \
     CONF_DIR="/var/www/conf" \
@@ -22,8 +24,8 @@ ENV PATH="${PATH}:/home/wodby/.composer/vendor/bin:${APP_ROOT}/vendor/bin:${APP_
     SSHD_HOST_KEYS_DIR="/etc/ssh" \
     ENV="/home/wodby/.shrc" \
     \
-    GIT_USER_EMAIL="wodby@example.com" \
-    GIT_USER_NAME="wodby"
+    GIT_USER_EMAIL="drupaladmin@nrel.gov" \
+    GIT_USER_NAME="Drupal Admin"
 
 RUN set -xe; \
     \
