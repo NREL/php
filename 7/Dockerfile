@@ -16,7 +16,7 @@ ENV PHP_DEV="${PHP_DEV}" \
 
 ENV APP_ROOT="/var/www/html" \
     CONF_DIR="/var/www/conf" \
-    FILES_DIR="/var/www/common/files"
+    FILES_DIR="/var/www/common"
 
 ENV PATH="${PATH}:/home/wodby/.composer/vendor/bin:${APP_ROOT}/vendor/bin:${APP_ROOT}/bin" \
     SSHD_HOST_KEYS_DIR="/etc/ssh" \
@@ -282,8 +282,8 @@ RUN set -xe; \
         /home/wodby/.ssh; \
     \
     install -o www-data -g www-data -d \
-        "${FILES_DIR}/public" \
-        "${FILES_DIR}/private" \
+        "${FILES_DIR}/files" \
+        "${FILES_DIR}/files/private" \
         "${FILES_DIR}/sessions" \
         "${FILES_DIR}/xdebug/traces" \
         "${FILES_DIR}/xdebug/profiler" \
