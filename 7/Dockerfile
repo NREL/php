@@ -71,7 +71,7 @@ RUN set -xe; \
         openssh \
         openssh-client \
         patch \
-	    pngquant \
+        pngquant \
         postgresql-client \
         rabbitmq-c=0.8.0-r5 \
         rsync \
@@ -199,7 +199,6 @@ RUN set -xe; \
         jsmin-3.0.0 \
         memcached-3.1.4 \
         mongodb-1.6.0 \
-        oauth-2.0.3 \
         rdkafka-3.1.2 \
         uuid-1.0.4 \
         xdebug-2.8.0 \
@@ -216,7 +215,6 @@ RUN set -xe; \
         grpc \
         jsmin \
         mongodb \
-        oauth \
         rdkafka \
         uuid \
         xdebug \
@@ -238,7 +236,8 @@ RUN set -xe; \
     # aws-elasticache-cluster-client-memcached-for-php
     mkdir -p /tmp/cluster; \
     version=$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;"); \
-    cluster_url="https://elasticache-downloads.s3.amazonaws.com/ClusterClient/PHP-${version}/latest-64bit"; \
+    # cluster_url="https://elasticache-downloads.s3.amazonaws.com/ClusterClient/PHP-${version}/latest-64bit"; \
+    cluster_url="https://elasticache-downloads.s3.amazonaws.com/ClusterClient/PHP-7.3/latest-64bit"; \
     wget -qO- "${cluster_url}" | tar xz --no-same-owner -C /tmp/cluster; \
     mv /tmp/cluster/amazon-elasticache-cluster-client.so $(php -r "echo ini_get('extension_dir');")/; \
 
