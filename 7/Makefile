@@ -2,7 +2,7 @@
 
 PHP_DEV=1
 
-PHP_VER ?= 7.2.24
+PHP_VER ?= 7.3.12
 
 PHP_DEV=1
 

@@ -59,7 +59,7 @@ RUN set -xe; \
         libpng=1.6.37-r0 \
         librdkafka=0.11.4-r1 \
         libuuid=2.32-r0 \
-        libxslt=1.1.33-r1 \
+        libxslt=1.1.33-r2 \
         make \
         mariadb-client \
         nano \
@@ -172,11 +172,11 @@ RUN set -xe; \
         amqp-1.9.4 \
         apcu-4.0.11 \
         event-2.5.3 \
-        grpc-1.20.0 \
+        grpc-1.23.1 \
         igbinary-2.0.8 \
         imagick-3.4.4 \
         memcached-2.2.0 \
-        mongodb-1.5.5 \
+        mongodb-1.6.0 \
         oauth-1.2.3 \
         rdkafka-3.1.2 \
         redis-4.3.0 \
