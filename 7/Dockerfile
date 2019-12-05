@@ -57,6 +57,7 @@ RUN set -xe; \
         libjpeg-turbo-utils \
         libldap=2.4.48-r0 \
         libltdl=2.4.6-r6 \
+        libc6-compat \
         libmemcached-libs=1.0.18-r3 \
         libmcrypt=2.5.8-r7 \
         libpng=1.6.37-r1 \
